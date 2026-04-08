@@ -1,9 +1,10 @@
 import { useState } from "react"
 
 import Form from "./Form"
+import List from "./List";
 
 
-type Todo = {
+export type Todo = {
     id:number,
     content:string
 }
@@ -16,12 +17,13 @@ function Content() {
             "id": todos.length,
             "content":content
         };
-        setTodos([...todos, todo]);
+        setTodos(prevTodos=>[...prevTodos, todo]);
     }
 
     return (
         <>
         <Form setTodo={setTodo} />
+        <List todos={todos}/>
         </>
     )
 }
