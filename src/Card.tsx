@@ -7,7 +7,6 @@ type cardProps = {
 
 
 function Card({todo,delteTodo}:cardProps){
-    console.log(todo.id);
     return (
         <>
             <li key={todo.id}>

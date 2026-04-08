@@ -9,7 +9,7 @@ type listProps = {
 function List({todos, deleteTodo}:listProps){
     return (
         <>
-        {todos.map((todo,index)=>(
+        {todos.map((todo)=>(
             <ul>
                 <Card todo={todo} delteTodo={deleteTodo}/>  
             </ul>
