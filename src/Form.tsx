@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
 type FormProps = {
     setTodo:(content:string)=>void
@@ -13,7 +13,7 @@ function Form({setTodo}:FormProps) {
     return (
         <>
         <input type="text"  id="todoInput" value={todoInput} onChange={(e) => setTodoInput(e.target.value)}/>
-        <button onClick={(e) => {
+        <button onClick={() => {
             postTodo(todoInput);
             setTodoInput("");
             }}>Post</button>
