@@ -27,10 +27,14 @@ function Content() {
         setTodos(prevTodos=>[...prevTodos, todo]);
     }
 
+    const deleteTodo = (id:number) => {
+        setTodos(todos.filter(todo=>todo.id !== id))
+    }
+
     return (
         <>
         <Form setTodo={setTodo} />
-        <List todos={todos}/>
+        <List todos={todos} deleteTodo={deleteTodo}/>
         </>
     )
 }

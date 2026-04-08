@@ -1,16 +1,20 @@
 import type { Todo } from "./Content"
 
 type cardProps = {
-    todo: Todo
+    todo: Todo,
+    delteTodo:(id:number)=>void
 }
 
 
-function Card({todo}:cardProps){
+function Card({todo,delteTodo}:cardProps){
     console.log(todo.id);
     return (
         <>
             <li key={todo.id}>
-                <p>{todo.content}</p>
+                <p>{todo.content}
+                    <button onClick={()=>delteTodo(todo.id)}>Delete</button>
+                </p>
+                
             </li>
         </>
     )

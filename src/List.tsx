@@ -2,15 +2,16 @@ import Card from "./Card"
 import type { Todo } from "./Content"
 
 type listProps = {
-    todos: Todo[]
+    todos: Todo[],
+    deleteTodo: (id:number)=>void
 }
 
-function List({todos}:listProps){
+function List({todos, deleteTodo}:listProps){
     return (
         <>
         {todos.map((todo,index)=>(
             <ul>
-                <Card todo={todo}/>  
+                <Card todo={todo} delteTodo={deleteTodo}/>  
             </ul>
                
         ))}
