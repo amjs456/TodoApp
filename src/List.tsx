@@ -8,14 +8,14 @@ type listProps = {
 
 function List({todos, deleteTodo}:listProps){
     return (
-        <>
+        <div id="todolist">
         {todos.map((todo)=>(
             <ul>
                 <Card todo={todo} delteTodo={deleteTodo}/>  
             </ul>
                
         ))}
-        </>
+        </div>
     )
 }
 

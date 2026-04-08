@@ -8,14 +8,14 @@ type cardProps = {
 
 function Card({todo,delteTodo}:cardProps){
     return (
-        <>
+        <div className="todocard">
             <li key={todo.id}>
                 <p>{todo.content}
                     <button onClick={()=>delteTodo(todo.id)}>Delete</button>
                 </p>
                 
             </li>
-        </>
+        </div>
     )
 }
 

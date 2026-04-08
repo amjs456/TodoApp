@@ -32,10 +32,10 @@ function Content() {
     }
 
     return (
-        <>
-        <Form setTodo={setTodo} />
-        <List todos={todos} deleteTodo={deleteTodo}/>
-        </>
+        <div id="content">
+            <Form setTodo={setTodo} />
+            <List todos={todos} deleteTodo={deleteTodo}/>
+        </div>
     )
 }
 
