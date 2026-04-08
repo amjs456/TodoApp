@@ -13,7 +13,10 @@ function Form({setTodo}:FormProps) {
     return (
         <>
         <input type="text"  id="todoInput" value={todoInput} onChange={(e) => setTodoInput(e.target.value)}/>
-        <button onClick={() => postTodo(todoInput)}>Post</button>
+        <button onClick={(e) => {
+            postTodo(todoInput);
+            setTodoInput("");
+            }}>Post</button>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import Form from "./Form"
 import List from "./List";
@@ -10,7 +10,14 @@ export type Todo = {
 }
 
 function Content() {
-    const [todos, setTodos] = useState<Todo[]>([]);
+    const [todos, setTodos] = useState<Todo[]>(()=>{
+        const saved = localStorage.getItem("todos");
+        return saved ? JSON.parse(saved): [];
+    });
+
+    useEffect(()=>{
+        localStorage.setItem("todos", JSON.stringify(todos));
+    }, [todos]);
 
     const setTodo = (content:string) => {
         const todo:Todo = {
