@@ -2,11 +2,14 @@ import { useEffect, useState } from "react"
 
 import Form from "./Form"
 import List from "./List";
+import type { TabItem } from "./Tab";
+import Tabs from "./Tabs";
 
 
 export type Todo = {
     id:number,
-    content:string
+    content:string,
+    tabId:string
 }
 
 function Content() {
@@ -19,10 +22,11 @@ function Content() {
         localStorage.setItem("todos", JSON.stringify(todos));
     }, [todos]);
 
-    const setTodo = (content:string) => {
+    const setTodo = (content:string, tabId:string) => {
         const todo:Todo = {
             "id": todos.length,
-            "content":content
+            "content":content,
+            "tabId":tabId
         };
         setTodos(prevTodos=>[...prevTodos, todo]);
     }
@@ -34,7 +38,7 @@ function Content() {
     return (
         <div id="content">
             <Form setTodo={setTodo} />
-            <List todos={todos} deleteTodo={deleteTodo}/>
+            <Tabs todos={todos} deleteTodo={deleteTodo}/>
         </div>
     )
 }
