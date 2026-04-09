@@ -3,13 +3,16 @@ import { useEffect, useState } from "react"
 import Tabs from "./Tabs";
 import Tab from "./Tab";
 
-import type { TabItem } from "./Tab";
-
 
 export type Todo = {
     id:number,
     content:string,
     tabId:string
+}
+
+export type TabItem = {
+    id:string,
+    name:string
 }
 
 function Content() {

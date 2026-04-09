@@ -1,4 +1,4 @@
-import type{ TabItem } from "./Tab"
+import type{ TabItem } from "./Content"
 import "./Tabs.css"
 
 type TabsProps = {

@@ -1,12 +1,10 @@
 import type { Todo } from "./Content";
+import type { TabItem } from "./Content";
 import Form from "./Form";
 import List from "./List";
 
 
-export type TabItem = {
-    id:string,
-    name:string
-}
+
 
 type TabProps = {
     tabItem:TabItem,
