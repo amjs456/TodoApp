@@ -1,6 +1,4 @@
-import Card from "./Card"
 import type { Todo } from "./Content";
-import deleteTodo from "./Content"
 import List from "./List";
 
 

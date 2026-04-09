@@ -16,7 +16,7 @@ function Tabs({todos, deleteTodo}:TabsProps) {
         "id":"all", 
         "name": "ALL"
     }
-    const [tabs, setTabs] = useState<TabItem[]>(()=>{
+    const [tabs] = useState<TabItem[]>(()=>{
         const saved = localStorage.getItem("tabs");
         return saved ? JSON.parse(saved): [tabAll];
     })

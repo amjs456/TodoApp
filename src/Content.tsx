@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 
 import Form from "./Form"
-import List from "./List";
-import type { TabItem } from "./Tab";
 import Tabs from "./Tabs";
 
 
