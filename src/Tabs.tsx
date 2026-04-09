@@ -8,10 +8,11 @@ import "./Tabs.css"
 
 type TabsProps = {
     todos:Todo[],
+    setTodo:(conent:string, tabId:string)=>void,
     deleteTodo:(id:number)=>void
 }
 
-function Tabs({todos, deleteTodo}:TabsProps) {
+function Tabs({todos, setTodo, deleteTodo}:TabsProps) {
     const tabAll = {
         "id":"all", 
         "name": "ALL"
@@ -42,7 +43,7 @@ function Tabs({todos, deleteTodo}:TabsProps) {
             {tabs.map((tab)=>(
                 <div className="tab" key={tab.id} onClick={()=>onClick(tab.id)}>{tab.name}</div>
             ))}
-            <Tab tabItem={tab} todos={todos} deleteTodo={deleteTodo} />
+            <Tab tabItem={tab} todos={todos} setTodo={setTodo} deleteTodo={deleteTodo} />
         </div>
     )
 }

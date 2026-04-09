@@ -35,8 +35,7 @@ function Content() {
 
     return (
         <div id="content">
-            <Form setTodo={setTodo} />
-            <Tabs todos={todos} deleteTodo={deleteTodo}/>
+            <Tabs todos={todos} setTodo={setTodo} deleteTodo={deleteTodo}/>
         </div>
     )
 }
