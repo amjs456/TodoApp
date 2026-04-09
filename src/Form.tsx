@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 
+import "./Form.css"
+
 type FormProps = {
     setTodo:(content:string, tabId:string)=>void,
     tabId:string
@@ -16,7 +18,7 @@ function Form({setTodo, tabId}:FormProps) {
     }
 
     return (
-        <div id="todoform">
+        <div className={tabId==="all"?"todoform inactive":"todoform"}>
             <form onSubmit={(e=>handleSubmit(e))}>
                 <input type="text"  id="todoInput" value={todoInput} onChange={(e) => setTodoInput(e.target.value)}/>
                 <button type="submit" onClick={() => {

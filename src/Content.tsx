@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import Tabs from "./Tabs";
 import Tab from "./Tab";
 
+import "./Content.css"
+
 
 export type Todo = {
     id:number,
@@ -64,7 +66,7 @@ function Content() {
     }
 
     return (
-        <div id="content">
+        <div className="content">
             <Tabs tabs={tabs} selectTab={selectTab} />
             <Tab tabItem={selectedTab} todos={todos} setTodo={setTodo} deleteTodo={deleteTodo} />
         </div>

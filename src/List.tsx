@@ -1,6 +1,8 @@
 import Card from "./Card"
 import type { Todo } from "./Content"
 
+import "./List.css"
+
 type listProps = {
     todos: Todo[],
     deleteTodo: (id:number)=>void

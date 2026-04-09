@@ -3,7 +3,7 @@ import type { TabItem } from "./Content";
 import Form from "./Form";
 import List from "./List";
 
-
+import "./Tabs.css"
 
 
 type TabProps = {
@@ -22,10 +22,10 @@ function Tab({tabItem, todos, setTodo, deleteTodo}:TabProps){
     }
     
     return (
-        <>  
-            {tabItem.id!=="all" && <Form setTodo={setTodo} tabId={tabItem.id}/>}
+        <div className="tab">  
+            <Form setTodo={setTodo} tabId={tabItem.id}/>
             <List todos={filteredTodos} deleteTodo={deleteTodo}/>
-        </>
+        </div>
     )
 }
 
