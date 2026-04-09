@@ -3,17 +3,14 @@ import React, { useState } from "react"
 import type { TabItem } from "./Tab";
 
 type FormProps = {
-    setTodo:(content:string, tabId:string)=>void
+    setTodo:(content:string, tabId:string)=>void,
+    tabId:string
 }
 
-function Form({setTodo}:FormProps) {
+function Form({setTodo, tabId}:FormProps) {
     const [todoInput, setTodoInput] = useState<string>("");
     const postTodo = (content: string, tabId:string) => {
         setTodo(content, tabId);
-    }
-    const tab:TabItem={
-        "id":"sample",
-        "name":"sample"
     }
 
     const handleSubmit = (e:React.SubmitEvent) => {
@@ -25,7 +22,7 @@ function Form({setTodo}:FormProps) {
             <form onSubmit={(e=>handleSubmit(e))}>
                 <input type="text"  id="todoInput" value={todoInput} onChange={(e) => setTodoInput(e.target.value)}/>
                 <button type="submit" onClick={() => {
-                    postTodo(todoInput, tab.id);
+                    postTodo(todoInput, tabId);
                     setTodoInput("");
                 }}>Post</button>
             </form>
