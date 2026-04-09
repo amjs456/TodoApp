@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 
-import type { TabItem } from "./Tab";
-
 type FormProps = {
     setTodo:(content:string, tabId:string)=>void,
     tabId:string
