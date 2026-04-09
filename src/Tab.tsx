@@ -16,7 +16,13 @@ type TabProps = {
 }
 
 function Tab({tabItem, todos, deleteTodo}:TabProps){
-    const filteredTodos = todos.filter(todo=>todo.tabId===tabItem.id)
+    let filteredTodos:Todo[];
+    if(tabItem.id==="all"){
+        filteredTodos = todos;
+    } else {
+        filteredTodos = todos.filter(todo=>todo.tabId===tabItem.id)
+    }
+    
     return (
         <>
             <List todos={filteredTodos} deleteTodo={deleteTodo}/>
